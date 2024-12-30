@@ -1,10 +1,11 @@
 import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
-import os
 
-# Load the Telegram bot token from environment variables
-TOKEN = os.getenv('BOT_TOKEN')
-bot = telebot.TeleBot(TOKEN)
+# Add your Telegram bot token here
+BOT_TOKEN = '7484144335:AAERDaK-VfcmaJGYFYIADKdmnzXuhyT-OUI'
+
+# Initialize the bot
+bot = telebot.TeleBot(BOT_TOKEN)
 
 # Function to show the keyboard
 def show_menu(message):
@@ -37,7 +38,7 @@ def show_menu(message):
 # Command handler for /start
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    show_menu(message)  
+    show_menu(message)
 
 print("Bot is running...")
 bot.polling()
