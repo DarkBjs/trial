@@ -1,7 +1,10 @@
 import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
+import os
 
-bot = telebot.TeleBot('7484144335:AAERDaK-VfcmaJGYFYIADKdmnzXuhyT-OUI')
+# Load the Telegram bot token from environment variables
+TOKEN = os.getenv('BOT_TOKEN')
+bot = telebot.TeleBot(TOKEN)
 
 # Function to show the keyboard
 def show_menu(message):
@@ -24,7 +27,12 @@ def show_menu(message):
 
     # Send only the keyboard and the welcome message with first name
     first_name = message.chat.first_name
-    bot.send_message(message.chat.id, f"*😇 Wᴇʟᴄᴏᴍᴇ {first_name} Bᴜᴅᴅʏ Tᴏ Lᴇxᴀ Pʀᴏᴍᴏ*", reply_markup=markup, parse_mode='Markdown')
+    bot.send_message(
+        message.chat.id,
+        f"*😇 Wᴇʟᴄᴏᴍᴇ {first_name} Bᴜᴅᴅʏ Tᴏ Lᴇxᴀ Pʀᴏᴍᴏ*",
+        reply_markup=markup,
+        parse_mode='Markdown'
+    )
 
 # Command handler for /start
 @bot.message_handler(commands=['start'])
