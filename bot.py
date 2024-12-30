@@ -2,7 +2,7 @@ import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
 # Add your Telegram bot token here
-BOT_TOKEN = '7484144335:AAERDaK-VfcmaJGYFYIADKdmnzXuhyT-OUI'
+BOT_TOKEN = '7484144335:AAEaAUKK2A6u2wu4MFx4Whv22ajal-hRb0o'
 
 # Initialize the bot
 bot = telebot.TeleBot(BOT_TOKEN)
